@@ -1,0 +1,7 @@
+[Wed Aug 26 19:18:49 2026] PHP 8.3.6 Development Server (http://127.0.0.1:8001) started
+[Wed Aug 26 19:18:55 2026] 127.0.0.1:59310 Accepted
+[Wed Aug 26 19:18:55 2026] 127.0.0.1:59310 [201]: POST /api/orders
+[Wed Aug 26 19:18:55 2026] 127.0.0.1:59310 Closing
+"total_amount":170}}
+{"timestamp":"2026-08-26 12:22:14","service":"pos","action":"checkout_success","success":true,"details":{"order_id":2,"total_amount":150}}
+{"timestamp":"2026-08-26 12:22:39","service":"pos","action":"checkout_success","success":true,"details":{"order_id":3,"total_amount":200}}

@@ -1,0 +1,7 @@
+[Wed Aug 26 19:18:49 2026] PHP 8.3.6 Development Server (http://127.0.0.1:8003) started
+[Wed Aug 26 19:18:55 2026] 127.0.0.1:43210 Accepted
+[Wed Aug 26 19:18:55 2026] 127.0.0.1:43210 [201]: POST /api/revenue/record
+[Wed Aug 26 19:18:55 2026] 127.0.0.1:43210 Closing
+[Wed Aug 26 19:18:59 2026] 127.0.0.1:43218 Accepted
+[Wed Aug 26 19:18:59 2026] 127.0.0.1:43218 [200]: GET /api/revenue/summary?period=today
+[Wed Aug 26 19:18:59 2026] 127.0.0.1:43218 Closing

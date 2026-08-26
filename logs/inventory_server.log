@@ -1,0 +1,148 @@
+[Wed Aug 26 19:20:11 2026] PHP 8.3.6 Development Server (http://127.0.0.1:8002) started
+[Wed Aug 26 19:20:16 2026] 127.0.0.1:36322 Accepted
+[Wed Aug 26 19:20:16 2026] 127.0.0.1:36322 [200]: GET /api/products
+[Wed Aug 26 19:20:16 2026] 127.0.0.1:36322 Closing
+[Wed Aug 26 19:20:16 2026] 127.0.0.1:36324 Accepted
+[Wed Aug 26 19:20:16 2026] 127.0.0.1:36334 Accepted
+[Wed Aug 26 19:20:16 2026] 127.0.0.1:36324 [200]: GET /api/ingredients
+[Wed Aug 26 19:20:16 2026] 127.0.0.1:36324 Closing
+[Wed Aug 26 19:20:16 2026] 127.0.0.1:36334 [200]: GET /api/transactions
+[Wed Aug 26 19:20:16 2026] 127.0.0.1:36334 Closing
+[Wed Aug 26 19:20:16 2026] 127.0.0.1:36346 Accepted
+[Wed Aug 26 19:20:16 2026] 127.0.0.1:36346 [200]: GET /api/products
+[Wed Aug 26 19:20:16 2026] 127.0.0.1:36346 Closing
+[Wed Aug 26 19:20:23 2026] 127.0.0.1:38314 Accepted
+[Wed Aug 26 19:20:23 2026] 127.0.0.1:38314 [200]: GET /api/products
+[Wed Aug 26 19:20:23 2026] 127.0.0.1:38314 Closing
+[Wed Aug 26 19:20:26 2026] 127.0.0.1:38324 Accepted
+[Wed Aug 26 19:20:26 2026] 127.0.0.1:38324 [200]: GET /api/ingredients
+[Wed Aug 26 19:20:26 2026] 127.0.0.1:38324 Closing
+[Wed Aug 26 19:20:26 2026] 127.0.0.1:38330 Accepted
+[Wed Aug 26 19:20:26 2026] 127.0.0.1:38330 [200]: GET /api/recipes/product/1
+[Wed Aug 26 19:20:26 2026] 127.0.0.1:38330 Closing
+[Wed Aug 26 19:20:31 2026] 127.0.0.1:41446 Accepted
+[Wed Aug 26 19:20:31 2026] 127.0.0.1:41446 [200]: GET /api/ingredients
+[Wed Aug 26 19:20:31 2026] 127.0.0.1:41446 Closing
+[Wed Aug 26 19:20:31 2026] 127.0.0.1:41458 Accepted
+[Wed Aug 26 19:20:31 2026] 127.0.0.1:41458 [200]: GET /api/transactions
+[Wed Aug 26 19:20:31 2026] 127.0.0.1:41458 Closing
+[Wed Aug 26 19:20:32 2026] 127.0.0.1:41468 Accepted
+[Wed Aug 26 19:20:32 2026] 127.0.0.1:41468 [200]: GET /api/ingredients
+[Wed Aug 26 19:20:32 2026] 127.0.0.1:41468 Closing
+[Wed Aug 26 19:20:32 2026] 127.0.0.1:41482 Accepted
+[Wed Aug 26 19:20:32 2026] 127.0.0.1:41482 [200]: GET /api/transactions
+[Wed Aug 26 19:20:32 2026] 127.0.0.1:41482 Closing
+[Wed Aug 26 19:20:40 2026] 127.0.0.1:41494 Accepted
+[Wed Aug 26 19:20:40 2026] 127.0.0.1:41494 [200]: GET /api/products
+[Wed Aug 26 19:20:40 2026] 127.0.0.1:41494 Closing
+[Wed Aug 26 19:20:41 2026] 127.0.0.1:47184 Accepted
+[Wed Aug 26 19:20:41 2026] 127.0.0.1:47184 [200]: GET /api/ingredients
+[Wed Aug 26 19:20:41 2026] 127.0.0.1:47184 Closing
+[Wed Aug 26 19:20:41 2026] 127.0.0.1:47198 Accepted
+[Wed Aug 26 19:20:41 2026] 127.0.0.1:47198 [200]: GET /api/transactions
+[Wed Aug 26 19:20:41 2026] 127.0.0.1:47198 Closing
+[Wed Aug 26 19:21:15 2026] 127.0.0.1:39006 Accepted
+[Wed Aug 26 19:21:15 2026] 127.0.0.1:39006 [200]: OPTIONS /api/ingredients/purchase
+[Wed Aug 26 19:21:15 2026] 127.0.0.1:39006 Closing
+[Wed Aug 26 19:21:15 2026] 127.0.0.1:39018 Accepted
+[Wed Aug 26 19:21:15 2026] 127.0.0.1:39018 [201]: POST /api/ingredients/purchase
+[Wed Aug 26 19:21:15 2026] 127.0.0.1:39018 Closing
+[Wed Aug 26 19:21:15 2026] 127.0.0.1:39030 Accepted
+[Wed Aug 26 19:21:15 2026] 127.0.0.1:39030 [200]: GET /api/ingredients
+[Wed Aug 26 19:21:15 2026] 127.0.0.1:39030 Closing
+[Wed Aug 26 19:21:15 2026] 127.0.0.1:39038 Accepted
+[Wed Aug 26 19:21:15 2026] 127.0.0.1:39038 [200]: GET /api/transactions
+[Wed Aug 26 19:21:15 2026] 127.0.0.1:39038 Closing
+[Wed Aug 26 19:21:20 2026] 127.0.0.1:39044 Accepted
+[Wed Aug 26 19:21:20 2026] 127.0.0.1:39044 [200]: GET /api/products
+[Wed Aug 26 19:21:20 2026] 127.0.0.1:39044 Closing
+[Wed Aug 26 19:21:20 2026] 127.0.0.1:39056 Accepted
+[Wed Aug 26 19:21:20 2026] 127.0.0.1:39056 [200]: GET /api/ingredients
+[Wed Aug 26 19:21:20 2026] 127.0.0.1:39056 Closing
+[Wed Aug 26 19:21:20 2026] 127.0.0.1:39066 Accepted
+[Wed Aug 26 19:21:20 2026] 127.0.0.1:39066 [200]: GET /api/transactions
+[Wed Aug 26 19:21:20 2026] 127.0.0.1:39066 Closing
+[Wed Aug 26 19:21:21 2026] 127.0.0.1:60488 Accepted
+[Wed Aug 26 19:21:21 2026] 127.0.0.1:60488 [200]: GET /api/products
+[Wed Aug 26 19:21:21 2026] 127.0.0.1:60488 Closing
+[Wed Aug 26 19:21:24 2026] 127.0.0.1:60500 Accepted
+[Wed Aug 26 19:21:24 2026] 127.0.0.1:60500 [200]: GET /api/ingredients
+[Wed Aug 26 19:21:24 2026] 127.0.0.1:60500 Closing
+[Wed Aug 26 19:21:24 2026] 127.0.0.1:60508 Accepted
+[Wed Aug 26 19:21:24 2026] 127.0.0.1:60508 [200]: GET /api/recipes/product/1
+[Wed Aug 26 19:21:24 2026] 127.0.0.1:60508 Closing
+[Wed Aug 26 19:21:40 2026] 127.0.0.1:58930 Accepted
+[Wed Aug 26 19:21:40 2026] 127.0.0.1:58930 [200]: OPTIONS /api/recipes
+[Wed Aug 26 19:21:40 2026] 127.0.0.1:58930 Closing
+[Wed Aug 26 19:21:40 2026] 127.0.0.1:58936 Accepted
+[Wed Aug 26 19:21:40 2026] 127.0.0.1:58936 [200]: POST /api/recipes
+[Wed Aug 26 19:21:40 2026] 127.0.0.1:58936 Closing
+[Wed Aug 26 19:21:40 2026] 127.0.0.1:58944 Accepted
+[Wed Aug 26 19:21:40 2026] 127.0.0.1:58944 [200]: GET /api/products
+[Wed Aug 26 19:21:40 2026] 127.0.0.1:58944 Closing
+[Wed Aug 26 19:21:43 2026] 127.0.0.1:49292 Accepted
+[Wed Aug 26 19:21:43 2026] 127.0.0.1:49292 [200]: GET /api/products/1
+[Wed Aug 26 19:21:43 2026] 127.0.0.1:49292 Closing
+[Wed Aug 26 19:21:47 2026] 127.0.0.1:49300 Accepted
+[Wed Aug 26 19:21:47 2026] 127.0.0.1:49300 [200]: OPTIONS /api/products/1
+[Wed Aug 26 19:21:47 2026] 127.0.0.1:49300 Closing
+[Wed Aug 26 19:21:47 2026] 127.0.0.1:49316 Accepted
+[Wed Aug 26 19:21:47 2026] 127.0.0.1:49316 [200]: PUT /api/products/1
+[Wed Aug 26 19:21:47 2026] 127.0.0.1:49316 Closing
+[Wed Aug 26 19:21:47 2026] 127.0.0.1:49326 Accepted
+[Wed Aug 26 19:21:47 2026] 127.0.0.1:49326 [200]: GET /api/products
+[Wed Aug 26 19:21:47 2026] 127.0.0.1:49326 Closing
+[Wed Aug 26 19:21:51 2026] 127.0.0.1:38602 Accepted
+[Wed Aug 26 19:21:51 2026] 127.0.0.1:38602 [200]: GET /api/products
+[Wed Aug 26 19:21:51 2026] 127.0.0.1:38602 Closing
+[Wed Aug 26 19:22:14 2026] 127.0.0.1:50240 Accepted
+[Wed Aug 26 19:22:14 2026] 127.0.0.1:50240 [200]: GET /api/products
+[Wed Aug 26 19:22:14 2026] 127.0.0.1:50240 Closing
+[Wed Aug 26 19:22:14 2026] 127.0.0.1:50250 Accepted
+[Wed Aug 26 19:22:14 2026] 127.0.0.1:50250 [200]: POST /api/inventory/check
+[Wed Aug 26 19:22:14 2026] 127.0.0.1:50250 Closing
+[Wed Aug 26 19:22:14 2026] 127.0.0.1:50266 Accepted
+[Wed Aug 26 19:22:14 2026] 127.0.0.1:50266 [200]: POST /api/inventory/consume
+[Wed Aug 26 19:22:14 2026] 127.0.0.1:50266 Closing
+[Wed Aug 26 19:22:14 2026] 127.0.0.1:50282 Accepted
+[Wed Aug 26 19:22:14 2026] 127.0.0.1:50282 [200]: GET /api/products
+[Wed Aug 26 19:22:14 2026] 127.0.0.1:50282 Closing
+[Wed Aug 26 19:22:22 2026] 127.0.0.1:33412 Accepted
+[Wed Aug 26 19:22:22 2026] 127.0.0.1:33412 [200]: GET /api/ingredients
+[Wed Aug 26 19:22:22 2026] 127.0.0.1:33412 Closing
+[Wed Aug 26 19:22:22 2026] 127.0.0.1:33424 Accepted
+[Wed Aug 26 19:22:22 2026] 127.0.0.1:33424 [200]: GET /api/transactions
+[Wed Aug 26 19:22:22 2026] 127.0.0.1:33424 Closing
+[Wed Aug 26 19:22:27 2026] 127.0.0.1:33430 Accepted
+[Wed Aug 26 19:22:27 2026] 127.0.0.1:33430 [200]: GET /api/products
+[Wed Aug 26 19:22:27 2026] 127.0.0.1:33430 Closing
+[Wed Aug 26 19:22:39 2026] 127.0.0.1:40804 Accepted
+[Wed Aug 26 19:22:39 2026] 127.0.0.1:40804 [200]: GET /api/products
+[Wed Aug 26 19:22:39 2026] 127.0.0.1:40804 Closing
+[Wed Aug 26 19:22:39 2026] 127.0.0.1:40808 Accepted
+[Wed Aug 26 19:22:39 2026] 127.0.0.1:40808 [200]: POST /api/inventory/check
+[Wed Aug 26 19:22:39 2026] 127.0.0.1:40808 Closing
+[Wed Aug 26 19:22:39 2026] 127.0.0.1:40820 Accepted
+[Wed Aug 26 19:22:39 2026] 127.0.0.1:40820 [200]: POST /api/inventory/consume
+[Wed Aug 26 19:22:39 2026] 127.0.0.1:40820 Closing
+[Wed Aug 26 19:22:39 2026] 127.0.0.1:40832 Accepted
+[Wed Aug 26 19:22:39 2026] 127.0.0.1:40832 [200]: GET /api/products
+[Wed Aug 26 19:22:39 2026] 127.0.0.1:40832 Closing
+[Wed Aug 26 19:22:41 2026] 127.0.0.1:60228 Accepted
+[Wed Aug 26 19:22:41 2026] 127.0.0.1:60228 [200]: GET /api/ingredients
+[Wed Aug 26 19:22:41 2026] 127.0.0.1:60228 Closing
+[Wed Aug 26 19:22:41 2026] 127.0.0.1:60242 Accepted
+[Wed Aug 26 19:22:41 2026] 127.0.0.1:60242 [200]: GET /api/transactions
+[Wed Aug 26 19:22:41 2026] 127.0.0.1:60242 Closing
+[Wed Aug 26 19:23:25 2026] 127.0.0.1:34664 Accepted
+[Wed Aug 26 19:23:25 2026] 127.0.0.1:34664 [200]: GET /api/ingredients
+[Wed Aug 26 19:23:25 2026] 127.0.0.1:34664 Closing
+[Wed Aug 26 19:23:25 2026] 127.0.0.1:34666 Accepted
+[Wed Aug 26 19:23:25 2026] 127.0.0.1:34666 [200]: GET /api/transactions
+[Wed Aug 26 19:23:25 2026] 127.0.0.1:34666 Closing
+[Wed Aug 26 19:23:25 2026] 127.0.0.1:34680 Accepted
+[Wed Aug 26 19:23:25 2026] 127.0.0.1:34680 [200]: GET /api/products
+[Wed Aug 26 19:23:25 2026] 127.0.0.1:34680 Closing
+[Wed Aug 26 19:23:26 2026] 127.0.0.1:34684 Accepted
+[Wed Aug 26 19:23:26 2026] 127.0.0.1:34684 [200]: GET /api/products
+[Wed Aug 26 19:23:26 2026] 127.0.0.1:34684 Closing

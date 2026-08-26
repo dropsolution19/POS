@@ -1,0 +1,6 @@
+{"timestamp":"2026-08-26 12:18:55","service":"recipe-inventory","action":"consume_stock_success","success":true,"details":{"order_id":"ORD-20260826121855-567"}}
+{"timestamp":"2026-08-26 12:21:15","service":"recipe-inventory","action":"purchase_stock","success":true,"details":{"ingredient_id":1,"name":"ไก่","added_stock":50,"new_stock":59.8,"average_cost_per_kg":54.9164}}
+{"timestamp":"2026-08-26 12:21:40","service":"recipe-inventory","action":"save_recipe","success":true,"details":{"product_id":1,"recipe_id":1}}
+{"timestamp":"2026-08-26 12:21:47","service":"recipe-inventory","action":"update_product","success":true,"details":{"id":1}}
+{"timestamp":"2026-08-26 12:22:14","service":"recipe-inventory","action":"consume_stock_success","success":true,"details":{"order_id":"ORD-20260826122214-389"}}
+{"timestamp":"2026-08-26 12:22:39","service":"recipe-inventory","action":"consume_stock_success","success":true,"details":{"order_id":"ORD-20260826122239-708"}}

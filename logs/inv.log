@@ -1,0 +1,16 @@
+[Wed Aug 26 19:18:49 2026] PHP 8.3.6 Development Server (http://127.0.0.1:8002) started
+[Wed Aug 26 19:18:51 2026] 127.0.0.1:33672 Accepted
+[Wed Aug 26 19:18:51 2026] 127.0.0.1:33672 [200]: GET /api/products
+[Wed Aug 26 19:18:51 2026] 127.0.0.1:33672 Closing
+[Wed Aug 26 19:18:55 2026] 127.0.0.1:33676 Accepted
+[Wed Aug 26 19:18:55 2026] 127.0.0.1:33676 [200]: GET /api/products
+[Wed Aug 26 19:18:55 2026] 127.0.0.1:33676 Closing
+[Wed Aug 26 19:18:55 2026] 127.0.0.1:33684 Accepted
+[Wed Aug 26 19:18:55 2026] 127.0.0.1:33684 [200]: POST /api/inventory/check
+[Wed Aug 26 19:18:55 2026] 127.0.0.1:33684 Closing
+[Wed Aug 26 19:18:55 2026] 127.0.0.1:33698 Accepted
+[Wed Aug 26 19:18:55 2026] 127.0.0.1:33698 [200]: POST /api/inventory/consume
+[Wed Aug 26 19:18:55 2026] 127.0.0.1:33698 Closing
+[Wed Aug 26 19:19:03 2026] 127.0.0.1:53690 Accepted
+[Wed Aug 26 19:19:03 2026] 127.0.0.1:53690 [200]: GET /api/ingredients
+[Wed Aug 26 19:19:03 2026] 127.0.0.1:53690 Closing

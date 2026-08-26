@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>POS Restaurant Microservices System</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- SIDEBAR NAVIGATION -->
+    <aside class="sidebar">
+        <div class="brand">
+            <div class="brand-icon">
+                <i class="fa-solid fa-utensils"></i>
+            </div>
+            <div class="brand-title">POS Microservice</div>
+        </div>
+
+        <ul class="nav-list">
+            <li class="nav-item active" data-tab="tab-pos">
+                <i class="fa-solid fa-cash-register"></i>
+                <span>ระบบขาย (POS)</span>
+            </li>
+            <li class="nav-item" data-tab="tab-products">
+                <i class="fa-solid fa-bowl-food"></i>
+                <span>อาหาร & สูตร</span>
+            </li>
+            <li class="nav-item" data-tab="tab-inventory">
+                <i class="fa-solid fa-boxes-stacked"></i>
+                <span>วัตถุดิบ & สต๊อก</span>
+            </li>
+            <li class="nav-item" data-tab="tab-revenue">
+                <i class="fa-solid fa-chart-line"></i>
+                <span>รายได้ & กำไร</span>
+            </li>
+        </ul>
+    </aside>
+
+    <!-- MAIN CONTENT AREA -->
+    <main class="main-content">
+
+        <!-- TAB 1: POS SYSTEM -->
+        <section id="tab-pos" class="tab-section active">
+            <div class="header-title">
+                <span><i class="fa-solid fa-cash-register"></i> ขายสินค้า</span>
+                <button class="btn btn-secondary" onclick="loadPosProducts()"><i class="fa-solid fa-rotate"></i> รีเฟรชสินค้า</button>
+            </div>
+
+            <div class="pos-container">
+                <!-- PRODUCTS GRID -->
+                <div class="products-grid" id="pos-products-grid">
+                    <!-- Dynamic Product Cards -->
+                </div>
+
+                <!-- CART PANEL -->
+                <div class="cart-panel">
+                    <div class="cart-title">
+                        <span>รายการสั่งซื้อ</span>
+                        <button class="btn btn-secondary btn-sm" onclick="clearCart()"><i class="fa-solid fa-trash"></i> ล้าง</button>
+                    </div>
+
+                    <div class="cart-items" id="cart-items-container">
+                        <!-- Dynamic Cart Items -->
+                    </div>
+
+                    <div class="cart-summary">
+                        <div class="summary-row total">
+                            <span>ยอดรวม:</span>
+                            <span id="cart-total-display">0.00 บาท</span>
+                        </div>
+
+                        <div class="payment-input-group">
+                            <label for="received-amount-input">รับเงินมา (บาท):</label>
+                            <input type="number" id="received-amount-input" class="form-control" placeholder="0.00" step="1" oninput="calculateChange()">
+                        </div>
+
+                        <div class="quick-cash-buttons" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.5rem; margin-top: 0.5rem;">
+                            <button class="btn btn-secondary" style="padding: 0.4rem; font-size: 0.85rem;" onclick="setQuickCash('exact')">พอดี</button>
+                            <button class="btn btn-secondary" style="padding: 0.4rem; font-size: 0.85rem;" onclick="setQuickCash(100)">100</button>
+                            <button class="btn btn-secondary" style="padding: 0.4rem; font-size: 0.85rem;" onclick="setQuickCash(500)">500</button>
+                            <button class="btn btn-secondary" style="padding: 0.4rem; font-size: 0.85rem;" onclick="setQuickCash(1000)">1000</button>
+                        </div>
+
+                        <div class="summary-row" style="margin-top: 0.5rem; font-size: 1.1rem; font-weight: 600;">
+                            <span>เงินทอน:</span>
+                            <span id="cart-change-display" style="color: var(--accent-warning);">0.00 บาท</span>
+                        </div>
+
+                        <button id="btn-checkout" class="btn btn-primary" style="margin-top: 0.75rem;" onclick="submitCheckout()">
+                            <i class="fa-solid fa-check-circle"></i> ชำระเงิน
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TAB 2: PRODUCTS & RECIPES -->
+        <section id="tab-products" class="tab-section">
+            <div class="header-title">
+                <span><i class="fa-solid fa-bowl-food"></i> จัดการรายการอาหาร & สูตร</span>
+                <button class="btn btn-primary" onclick="openProductModal()"><i class="fa-solid fa-plus"></i> เพิ่มอาหารใหม่</button>
+            </div>
+
+            <div class="card">
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>ชื่ออาหาร</th>
+                            <th>ราคาขาย (บาท)</th>
+                            <th>ต้นทุนโดยประมาณ (บาท)</th>
+                            <th>กำไรโดยประมาณ (บาท)</th>
+                            <th>วัตถุดิบในสูตร</th>
+                            <th>จัดการ</th>
+                        </tr>
+                    </thead>
+                    <tbody id="products-table-body">
+                        <!-- Dynamic Products List -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- TAB 3: INGREDIENTS & INVENTORY -->
+        <section id="tab-inventory" class="tab-section">
+            <div class="header-title">
+                <span><i class="fa-solid fa-boxes-stacked"></i> คลังวัตถุดิบ & การซื้อ</span>
+                <div style="display: flex; gap: 0.75rem;">
+                    <button class="btn btn-primary" onclick="openIngredientModal()"><i class="fa-solid fa-plus"></i> เพิ่มชนิดวัตถุดิบ</button>
+                    <button class="btn btn-success" onclick="openPurchaseModal()"><i class="fa-solid fa-cart-plus"></i> บันทึกการซื้อวัตถุดิบ</button>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>รายการวัตถุดิบในสต๊อก</h3>
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>ชื่อวัตถุดิบ</th>
+                            <th>จำนวนคงเหลือ (Stock)</th>
+                            <th>ราคาเฉลี่ยต่อหน่วย (บาท/kg)</th>
+                            <th>หน่วยนับ</th>
+                        </tr>
+                    </thead>
+                    <tbody id="ingredients-table-body">
+                        <!-- Dynamic Ingredients List -->
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="card" style="margin-top: 1.5rem;">
+                <h3>ประวัติ Stock Transactions</h3>
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>เวลา</th>
+                            <th>วัตถุดิบ</th>
+                            <th>ประเภท Transaction</th>
+                            <th>จำนวน (+/- kg)</th>
+                            <th>ต้นทุน/หน่วย</th>
+                            <th>อ้างอิง (Ref)</th>
+                        </tr>
+                    </thead>
+                    <tbody id="transactions-table-body">
+                        <!-- Dynamic Transactions List -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- TAB 4: REVENUE & PROFIT -->
+        <section id="tab-revenue" class="tab-section">
+            <div class="header-title">
+                <span><i class="fa-solid fa-chart-line"></i> รายงานรายได้และกำไร</span>
+                <div class="period-filters" style="display: flex; gap: 0.5rem;">
+                    <button class="btn btn-secondary btn-period active" onclick="loadRevenue('today', this)">วันนี้</button>
+                    <button class="btn btn-secondary btn-period" onclick="loadRevenue('yesterday', this)">เมื่อวาน</button>
+                    <button class="btn btn-secondary btn-period" onclick="loadRevenue('last_7_days', this)">7 วันที่ผ่านมา</button>
+                    <button class="btn btn-secondary btn-period" onclick="loadRevenue('this_month', this)">เดือนนี้</button>
+                </div>
+            </div>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <span class="stat-label">ยอดขายรวม</span>
+                    <span class="stat-value green" id="stat-total-revenue">฿ 0.00</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-label">ต้นทุนรวม</span>
+                    <span class="stat-value orange" id="stat-total-cost">฿ 0.00</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-label">กำไรสุทธิ</span>
+                    <span class="stat-value purple" id="stat-total-profit">฿ 0.00</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-label">จำนวนรายการขาย</span>
+                    <span class="stat-value blue" id="stat-total-orders">0 บิล</span>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>รายการขายละเอียด (Snapshot ต้นทุน ณ เวลาขาย)</h3>
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>เวลา</th>
+                            <th>เลขที่บิล</th>
+                            <th>รายการอาหาร</th>
+                            <th>จำนวน</th>
+                            <th>ราคาขายรวม</th>
+                            <th>ต้นทุนรวม</th>
+                            <th>กำไรสุทธิ</th>
+                        </tr>
+                    </thead>
+                    <tbody id="revenue-records-table-body">
+                        <!-- Dynamic Revenue Records -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- MODAL: ADD/EDIT PRODUCT -->
+    <div id="modal-product" class="modal-backdrop">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title" id="product-modal-title">เพิ่มรายการอาหาร</h3>
+                <button class="btn-close" onclick="closeModal('modal-product')">&times;</button>
+            </div>
+            <form id="form-product" onsubmit="saveProduct(event)">
+                <input type="hidden" id="prod-id">
+                <div class="payment-input-group" style="margin-bottom: 1rem;">
+                    <label>ชื่ออาหาร:</label>
+                    <input type="text" id="prod-name" class="form-control" required placeholder="เช่น ข้าวกะเพราไก่">
+                </div>
+                <div class="payment-input-group" style="margin-bottom: 1.5rem;">
+                    <label>ราคาขาย (บาท):</label>
+                    <input type="number" id="prod-price" class="form-control" step="0.5" required placeholder="60.00">
+                </div>
+                <div style="display: flex; justify-content: flex-end; gap: 0.75rem;">
+                    <button type="button" class="btn btn-secondary" onclick="closeModal('modal-product')">ยกเลิก</button>
+                    <button type="submit" class="btn btn-primary">บันทึก</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- MODAL: RECIPE BUILDER -->
+    <div id="modal-recipe" class="modal-backdrop">
+        <div class="modal-content" style="max-width: 650px;">
+            <div class="modal-header">
+                <h3 class="modal-title" id="recipe-modal-title">จัดการสูตรอาหาร</h3>
+                <button class="btn-close" onclick="closeModal('modal-recipe')">&times;</button>
+            </div>
+            <form id="form-recipe" onsubmit="saveRecipe(event)">
+                <input type="hidden" id="recipe-prod-id">
+                <div id="recipe-ingredients-list" style="display: flex; flex-direction: column; gap: 0.75rem; margin-bottom: 1rem;">
+                    <!-- Dynamic Recipe Ingredients Row -->
+                </div>
+                <button type="button" class="btn btn-secondary" style="margin-bottom: 1.5rem;" onclick="addRecipeIngredientRow()">
+                    <i class="fa-solid fa-plus"></i> เพิ่มวัตถุดิบในสูตร
+                </button>
+                <div class="summary-row" style="margin-bottom: 1.5rem; background: rgba(0,0,0,0.2); padding: 0.85rem; border-radius: 8px;">
+                    <span>ต้นทุนรวมตามสูตร (บาท):</span>
+                    <span id="recipe-calculated-cost" style="font-weight: bold; color: var(--accent-warning);">0.00</span>
+                </div>
+                <div style="display: flex; justify-content: flex-end; gap: 0.75rem;">
+                    <button type="button" class="btn btn-secondary" onclick="closeModal('modal-recipe')">ยกเลิก</button>
+                    <button type="submit" class="btn btn-primary">บันทึกสูตร</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- MODAL: ADD INGREDIENT -->
+    <div id="modal-ingredient" class="modal-backdrop">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">เพิ่มวัตถุดิบใหม่</h3>
+                <button class="btn-close" onclick="closeModal('modal-ingredient')">&times;</button>
+            </div>
+            <form id="form-ingredient" onsubmit="saveIngredient(event)">
+                <div class="payment-input-group" style="margin-bottom: 1rem;">
+                    <label>ชื่อวัตถุดิบ:</label>
+                    <input type="text" id="ing-name" class="form-control" required placeholder="เช่น เนื้อไก่">
+                </div>
+                <div class="payment-input-group" style="margin-bottom: 1.5rem;">
+                    <label>หน่วยนับ:</label>
+                    <input type="text" id="ing-unit" class="form-control" value="kg" required>
+                </div>
+                <div style="display: flex; justify-content: flex-end; gap: 0.75rem;">
+                    <button type="button" class="btn btn-secondary" onclick="closeModal('modal-ingredient')">ยกเลิก</button>
+                    <button type="submit" class="btn btn-primary">บันทึก</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- MODAL: PURCHASE STOCK -->
+    <div id="modal-purchase" class="modal-backdrop">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">บันทึกการซื้อวัตถุดิบ</h3>
+                <button class="btn-close" onclick="closeModal('modal-purchase')">&times;</button>
+            </div>
+            <form id="form-purchase" onsubmit="savePurchase(event)">
+                <div class="payment-input-group" style="margin-bottom: 1rem;">
+                    <label>เลือกวัตถุดิบ:</label>
+                    <select id="purchase-ing-id" class="form-control" required></select>
+                </div>
+                <div class="payment-input-group" style="margin-bottom: 1rem;">
+                    <label>จำนวนที่ซื้อ (kg / หน่วย):</label>
+                    <input type="number" id="purchase-qty" class="form-control" step="0.001" required placeholder="10.00">
+                </div>
+                <div class="payment-input-group" style="margin-bottom: 1.5rem;">
+                    <label>ราคาซื้อวันนี้ / kg (บาท):</label>
+                    <input type="number" id="purchase-price" class="form-control" step="0.1" required placeholder="90.00">
+                </div>
+                <div style="display: flex; justify-content: flex-end; gap: 0.75rem;">
+                    <button type="button" class="btn btn-secondary" onclick="closeModal('modal-purchase')">ยกเลิก</button>
+                    <button type="submit" class="btn btn-success">บันทึกการซื้อ & คำนวณราคาเฉลี่ย</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- MODAL: CHECKOUT RECEIPT / SUCCESS -->
+    <div id="modal-receipt" class="modal-backdrop">
+        <div class="modal-content" style="text-align: center; max-width: 420px;">
+            <div style="color: var(--accent-success); font-size: 3.5rem; margin-bottom: 0.5rem;">
+                <i class="fa-solid fa-circle-check"></i>
+            </div>
+            <h2 style="margin-bottom: 0.5rem;">ชำระเงินสำเร็จ!</h2>
+            <p id="receipt-order-number" style="color: var(--text-secondary); margin-bottom: 1.5rem;"></p>
+
+            <div style="background: rgba(0,0,0,0.3); border-radius: 12px; padding: 1.25rem; margin-bottom: 1.5rem; text-align: left;">
+                <div class="summary-row" style="margin-bottom: 0.5rem;">
+                    <span>ยอดเงินรวม:</span>
+                    <strong id="receipt-total" style="font-size: 1.2rem; color: white;">0.00 บาท</strong>
+                </div>
+                <div class="summary-row" style="margin-bottom: 0.5rem;">
+                    <span>รับเงินมา:</span>
+                    <span id="receipt-received">0.00 บาท</span>
+                </div>
+                <div class="summary-row" style="font-size: 1.3rem; color: var(--accent-warning); font-weight: bold; border-top: 1px solid var(--border); padding-top: 0.5rem; margin-top: 0.5rem;">
+                    <span>เงินทอน:</span>
+                    <span id="receipt-change">0.00 บาท</span>
+                </div>
+            </div>
+
+            <button class="btn btn-primary" style="width: 100%;" onclick="closeModal('modal-receipt')">ตกลง / ปิดหน้าต่าง</button>
+        </div>
+    </div>
+
+    <script src="js/app.js"></script>
+</body>
+</html>

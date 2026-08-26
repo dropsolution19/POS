@@ -1,0 +1,25 @@
+[Wed Aug 26 19:20:11 2026] PHP 8.3.6 Development Server (http://127.0.0.1:8003) started
+[Wed Aug 26 19:20:16 2026] 127.0.0.1:46646 Accepted
+[Wed Aug 26 19:20:16 2026] 127.0.0.1:46646 [200]: GET /api/revenue/summary?period=today
+[Wed Aug 26 19:20:16 2026] 127.0.0.1:46646 Closing
+[Wed Aug 26 19:20:16 2026] 127.0.0.1:46658 Accepted
+[Wed Aug 26 19:20:16 2026] 127.0.0.1:46658 [200]: GET /api/revenue/reports?start_date=2026-08-26&end_date=2026-08-26
+[Wed Aug 26 19:20:16 2026] 127.0.0.1:46658 Closing
+[Wed Aug 26 19:20:31 2026] 127.0.0.1:55240 Accepted
+[Wed Aug 26 19:20:31 2026] 127.0.0.1:55240 [200]: GET /api/revenue/summary?period=today
+[Wed Aug 26 19:20:31 2026] 127.0.0.1:55240 Closing
+[Wed Aug 26 19:20:31 2026] 127.0.0.1:55254 Accepted
+[Wed Aug 26 19:20:31 2026] 127.0.0.1:55254 [200]: GET /api/revenue/reports?start_date=2026-08-26&end_date=2026-08-26
+[Wed Aug 26 19:20:31 2026] 127.0.0.1:55254 Closing
+[Wed Aug 26 19:22:14 2026] 127.0.0.1:58884 Accepted
+[Wed Aug 26 19:22:14 2026] 127.0.0.1:58884 [201]: POST /api/revenue/record
+[Wed Aug 26 19:22:14 2026] 127.0.0.1:58884 Closing
+[Wed Aug 26 19:22:39 2026] 127.0.0.1:41756 Accepted
+[Wed Aug 26 19:22:39 2026] 127.0.0.1:41756 [201]: POST /api/revenue/record
+[Wed Aug 26 19:22:39 2026] 127.0.0.1:41756 Closing
+[Wed Aug 26 19:22:44 2026] 127.0.0.1:40638 Accepted
+[Wed Aug 26 19:22:44 2026] 127.0.0.1:40638 [200]: GET /api/revenue/summary?period=today
+[Wed Aug 26 19:22:44 2026] 127.0.0.1:40638 Closing
+[Wed Aug 26 19:22:44 2026] 127.0.0.1:40640 Accepted
+[Wed Aug 26 19:22:44 2026] 127.0.0.1:40640 [200]: GET /api/revenue/reports?start_date=2026-08-26&end_date=2026-08-26
+[Wed Aug 26 19:22:44 2026] 127.0.0.1:40640 Closing

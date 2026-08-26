@@ -1,0 +1,13 @@
+[Wed Aug 26 19:20:11 2026] PHP 8.3.6 Development Server (http://127.0.0.1:8000) started
+[Wed Aug 26 19:20:15 2026] 127.0.0.1:51488 Accepted
+[Wed Aug 26 19:20:15 2026] 127.0.0.1:51488 [200]: GET /
+[Wed Aug 26 19:20:15 2026] 127.0.0.1:51488 Closing
+[Wed Aug 26 19:20:15 2026] 127.0.0.1:51500 Accepted
+[Wed Aug 26 19:20:15 2026] 127.0.0.1:51500 [200]: GET /css/style.css
+[Wed Aug 26 19:20:15 2026] 127.0.0.1:51500 Closing
+[Wed Aug 26 19:20:15 2026] 127.0.0.1:51510 Accepted
+[Wed Aug 26 19:20:15 2026] 127.0.0.1:51510 [200]: GET /js/app.js
+[Wed Aug 26 19:20:15 2026] 127.0.0.1:51510 Closing
+[Wed Aug 26 19:20:16 2026] 127.0.0.1:51524 Accepted
+[Wed Aug 26 19:20:16 2026] 127.0.0.1:51524 [404]: GET /favicon.ico - No such file or directory
+[Wed Aug 26 19:20:16 2026] 127.0.0.1:51524 Closing
